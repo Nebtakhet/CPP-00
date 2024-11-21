@@ -6,7 +6,7 @@
 /*   By: cesasanc <cesasanc@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 14:11:42 by cesasanc          #+#    #+#             */
-/*   Updated: 2024/11/20 14:53:27 by cesasanc         ###   ########.fr       */
+/*   Updated: 2024/11/21 14:04:29 by cesasanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,6 @@ std::string	PhoneBook::get_input(const std::string &prompt)
 			std::cout << "Please enter a valid input." << std::endl;
 			continue ;
 		}
-		if (input.length() > 10)
-		{
-			std::cout << "Input is too long. Max. 10 characters" << std::endl;
-			continue ;
-		}
 		return (input);
 	}
 }
@@ -80,7 +75,8 @@ void PhoneBook::search_contact(void) const
     int index;
 
     max_contacts = is_full ? 8 : contact_count;
-    std::cout << "***** Relevant PhoneBook Entries *****" << std::endl;
+	
+    std::cout << std::endl << "***** Relevant PhoneBook Entries *****" << std::endl;
     std::cout << "|   Index  |First Name|Last  Name| Nickname |" << std::endl;
     std::cout << "-------------------------------------------" << std::endl;
     for (int i = 0; i < max_contacts; i++)
